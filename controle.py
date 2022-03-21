@@ -41,6 +41,16 @@ def funcao_principal():
 def chama_segunda_tela():
     segunda_tela.show()
 
+    cursor = banco.cursor()
+    comando_SQL = "SELECT * FROM produtos"
+    cursor.execute(comando_SQL)
+    dados_lidos = cursor.fetchall()
+    print(dados_lidos)
+
+
+
+
+
 app=QtWidgets.QApplication([])
 formulario=uic.loadUi("formulario.ui")
 segunda_tela=uic.loadUi("listar_dados.ui")
