@@ -1,7 +1,7 @@
 from PyQt5 import  uic,QtWidgets
-import _mysql_connector
+from _mysql_connector import connect
 
-banco = _mysql_connector.connect(
+banco = mysql.connector.connect(
     host="localhost",
     user="root",
     passwd="",
