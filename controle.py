@@ -1,10 +1,10 @@
 from PyQt5 import  uic,QtWidgets
-from _mysql_connector import connect
+import mysql.connector
 
 banco = mysql.connector.connect(
     host="localhost",
     user="root",
-    passwd="",
+    passwd="arlen1971",
     database="cadastro_produtos"
 )
 
