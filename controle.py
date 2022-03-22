@@ -45,11 +45,13 @@ def chama_segunda_tela():
     comando_SQL = "SELECT * FROM produtos"
     cursor.execute(comando_SQL)
     dados_lidos = cursor.fetchall()
-    print(dados_lidos)
 
+    segunda_tela.tabWidget.setRowCount(len(dados_lidos))
+    segunda_tela.tabWidget.setColumnCount(5)
 
-
-
+    for i in range(0, len(dados_lidos)):
+        for j in range(0, 5):
+           segunda_tela.tabWidget.setItem(i,j,QtWidgets.QTableWidgetItem(str(dados_lidos[i][j]))) 
 
 app=QtWidgets.QApplication([])
 formulario=uic.loadUi("formulario.ui")
